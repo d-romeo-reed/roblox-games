@@ -5,9 +5,6 @@
 - **Platform**: WSL2 on Windows
 - **Project**: MyFirstGame (Roblox)
 
-## Credentials
-- **Sudo Password**: secure4m3
-
 ## Installed Tools
 - Rojo 7.6.1 (installed at /usr/local/bin/rojo)
 - Git configured
