@@ -37,16 +37,33 @@ rojo serve
 ```
 
 ### In Roblox Studio (Windows)
-1. Install Rojo plugin from Plugin Manager
-2. Click "Rojo" button in toolbar
-3. Click "Connect" to localhost:34872
-4. Click "Sync In" to pull files from WSL
+1. Install Rojo plugin:
+   - Download from: https://github.com/rojo-rbx/rojo/releases/latest
+   - Get the `Rojo.rbxm` file
+   - In Studio: PLUGINS → Plugins Folder → Copy Rojo.rbxm there → Restart Studio
+2. Enable HTTP requests:
+   - HOME → Game Settings → Security → Allow HTTP Requests (check the box)
+3. Click "Rojo" button in PLUGINS tab
+4. Click "Connect" to localhost:34872
+5. Click "Sync In" to pull files from WSL
 
 ### Development Flow
 1. Edit Lua files in WSL (Claude can edit them)
 2. Rojo automatically syncs changes to Roblox Studio
 3. Test in Roblox Studio
 4. Commit changes: Claude can create git commits and push to GitHub
+
+### IMPORTANT: File Naming Conventions for Rojo
+- **Server Scripts** (run on server): Must end in `.server.lua`
+  - Example: `WelcomeMessage.server.lua`
+  - These become "Script" objects in ServerScriptService
+- **Client Scripts** (run on client): Must end in `.client.lua`
+  - Example: `PlayerUI.client.lua`
+  - These become "LocalScript" objects
+- **Module Scripts** (libraries): End in `.lua`
+  - Example: `Utilities.lua`
+  - These become "ModuleScript" objects
+- **If a file ends in just `.lua` in a server folder, it won't run!** It becomes a ModuleScript
 
 ### File Structure
 ```
